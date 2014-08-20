@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Application xmlns="http://xmlns.oracle.com/adfm/application" version="11.1.2.60.81" id="DataBindings"
+             SeparateXMLFiles="false" Package="com.redsamurai.view" ClientType="Generic">
+  <pageMap>
+    <page path="/party-details.jspx"
+          usageId="com_redsamurai_view_party_detailsPageDef"/>
+  </pageMap>
+  <pageDefinitionUsages>
+    <page id="com_redsamurai_view_party_detailsPageDef"
+          path="com.redsamurai.view.pageDefs.party_detailsPageDef"/>
+  </pageDefinitionUsages>
+  <dataControlUsages>
+    <BC4JDataControl id="HrWSModuleDataControl" Package="com.obpdemo.model"
+                     FactoryClass="oracle.adf.model.bc4j.DataControlFactoryImpl" SupportsTransactions="true"
+                     SupportsFindMode="true" SupportsRangesize="true" SupportsResetState="true"
+                     SupportsSortCollection="true" Configuration="HrWSModuleLocal" syncMode="Immediate"
+                     xmlns="http://xmlns.oracle.com/adfm/datacontrol"/>
+  </dataControlUsages>
+</Application>

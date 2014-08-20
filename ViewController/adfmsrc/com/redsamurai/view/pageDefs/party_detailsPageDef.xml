@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel"
+                version="11.1.1.64.93" id="party_detailsPageDef"
+                Package="com.redsamurai.view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="PartyVO1" RangeSize="25"
+              DataControl="HrWSModuleDataControl" id="PartyVO1Iterator"/>
+  </executables>
+  <bindings>
+    <attributeValues IterBinding="PartyVO1Iterator" id="name">
+      <AttrNames>
+        <Item Value="name"/>
+      </AttrNames>
+    </attributeValues>
+  </bindings>
+</pageDefinition>

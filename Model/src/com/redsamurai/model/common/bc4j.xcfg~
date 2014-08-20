@@ -1,0 +1,24 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<BC4JConfig version="11.1" xmlns="http://xmlns.oracle.com/bc4j/configuration">
+   <AppModuleConfigBag ApplicationName="com.redsamurai.model.HrWSModule">
+      <AppModuleConfig name="HrWSModuleLocal" 
+                       jbo.project="com.redsamurai.model.Model" 
+                       ApplicationName="com.redsamurai.model.HrWSModule" 
+                       DeployPlatform="LOCAL"
+                       SessionClass="com.redsamurai.model.framework.CustomSessionImpl">
+         <AM-Pooling jbo.ampool.connectionstrategyclass="com.redsamurai.model.framework.NoDatabaseConnectionStrategy"
+                     PoolClassName="com.redsamurai.model.framework.NoDatabaseApplicationPoolImpl"/>
+         <Database jbo.TypeMapEntries="OracleApps"/>
+         <Security AppModuleJndiName="com.redsamurai.model.HrWSModule"/>
+         <Custom RequiresConnection="false" password=""/>
+      </AppModuleConfig>
+      <AppModuleConfig name="HrWSModuleShared" 
+                       jbo.project="com.redsamurai.model.Model" 
+                       ApplicationName="com.redsamurai.model.HrWSModule" 
+                       DeployPlatform="LOCAL">
+         <AM-Pooling jbo.ampool.maxpoolsize="1" jbo.ampool.isuseexclusive="false"/>
+         <Database jbo.TypeMapEntries="OracleApps"/>
+         <Security AppModuleJndiName="com.redsamurai.model.HrWSModule"/>
+      </AppModuleConfig>
+   </AppModuleConfigBag>
+</BC4JConfig>

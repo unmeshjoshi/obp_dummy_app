@@ -23,7 +23,6 @@
   </Properties>
   <ViewAttribute
     Name="name"
-    IsUpdateable="false"
     IsSelected="false"
     IsQueriable="false"
     IsPersistent="false"
@@ -35,6 +34,6 @@
     SQLType="VARCHAR"/>
   <ResourceBundle>
     <PropertiesBundle
-      PropertiesFile="com.redsamurai.model.ModelBundle"/>
+      PropertiesFile="ModelBundle"/>
   </ResourceBundle>
 </ViewObject>

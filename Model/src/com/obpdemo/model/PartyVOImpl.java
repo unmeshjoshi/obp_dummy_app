@@ -20,9 +20,9 @@ public class PartyVOImpl extends ViewObjectImpl {
     boolean isInitialized = false;
   
     public PartyVOImpl() {
-        
     }
 
+    @Override
     protected void executeQueryForCollection(Object qc, Object[] params,
                                              int noUserParams) {
         //make websevice call to fetch party info.
@@ -36,6 +36,7 @@ public class PartyVOImpl extends ViewObjectImpl {
         super.executeQueryForCollection(qc, params, noUserParams);
     }
 
+    @Override
     protected ViewRowImpl createRowFromResultSet(Object qc, ResultSet rs) {
         // Create and populate a new row 
         ViewRowImpl r = createNewRowForCollection(qc);
@@ -45,11 +46,13 @@ public class PartyVOImpl extends ViewObjectImpl {
         return r; 
     }
 
+    @Override
     protected boolean hasNextForCollection(Object qc) {
         return getFetchPos(qc) < partyCount;
     }
 
 
+    @Override
     public long getQueryHitCount(ViewRowSetImpl viewRowSet) {
         return partyCount;
     }

@@ -4,10 +4,14 @@
   <pageMap>
     <page path="/party-details.jspx"
           usageId="com_redsamurai_view_party_detailsPageDef"/>
+    <page path="/partycrud.jspx"
+          usageId="com_redsamurai_view_partycrudPageDef"/>
   </pageMap>
   <pageDefinitionUsages>
     <page id="com_redsamurai_view_party_detailsPageDef"
           path="com.redsamurai.view.pageDefs.party_detailsPageDef"/>
+    <page id="com_redsamurai_view_partycrudPageDef"
+          path="com.redsamurai.view.pageDefs.partycrudPageDef"/>
   </pageDefinitionUsages>
   <dataControlUsages>
     <BC4JDataControl id="HrWSModuleDataControl" Package="com.obpdemo.model"

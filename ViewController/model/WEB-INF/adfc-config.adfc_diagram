@@ -5,16 +5,51 @@
    <View
       id="View2">
       <property
-         name="activityId">main</property>
+         name="activityId">party</property>
       <property
-         name="page">/main.jspx</property>
+         name="page">/party.jspx</property>
       <property
-         name="description">&lt;html>&lt;p>&lt;b>main&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+         name="description">&lt;html>&lt;p>&lt;b>party&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
       <property
          name="exceptionHandler">false</property>
       <property
-         name="y">183.29883</property>
+         name="y">203.09375</property>
       <property
-         name="x">394.0</property>
+         name="x">169.0</property>
    </View>
+   <View
+      id="View3">
+      <property
+         name="activityId">viewParty</property>
+      <property
+         name="page">/viewParty.jspx</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>viewParty&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">203.03125</property>
+      <property
+         name="x">493.0</property>
+   </View>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase5"
+      from="View2"
+      to="View3">
+      <property
+         name="fromOutcome">Save</property>
+      <property
+         name="sdm:polyPoints">R46,210.0,199.60938,451.99908,199.54688,L46</property>
+   </ControlFlowCase>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase8"
+      from="View3"
+      to="View2">
+      <property
+         name="fromOutcome">Edit</property>
+      <property
+         name="sdm:polyPoints">L54,452.0,206.54688,210.0009,206.60938,R54</property>
+   </ControlFlowCase>
 </SDM>

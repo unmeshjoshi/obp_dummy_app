@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel"
+                version="11.1.1.64.93" id="partyPageDef"
+                Package="com.redsamurai.view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="PartyVO1" RangeSize="25"
+              DataControl="HrWSModuleDataControl" id="PartyVO1Iterator"/>
+    <iterator Binds="PartyAddress" RangeSize="25"
+              DataControl="HrWSModuleDataControl" id="PartyAddressIterator"/>
+  </executables>
+  <bindings>
+    <attributeValues IterBinding="PartyVO1Iterator" id="name">
+      <AttrNames>
+        <Item Value="name"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="PartyVO1Iterator" id="branchName">
+      <AttrNames>
+        <Item Value="branchName"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="PartyAddressIterator" id="streetName">
+      <AttrNames>
+        <Item Value="streetName"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="PartyAddressIterator" id="city">
+      <AttrNames>
+        <Item Value="city"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="PartyAddressIterator" id="state">
+      <AttrNames>
+        <Item Value="state"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="PartyAddressIterator" id="country">
+      <AttrNames>
+        <Item Value="country"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="PartyAddressIterator" id="zip">
+      <AttrNames>
+        <Item Value="zip"/>
+      </AttrNames>
+    </attributeValues>
+  </bindings>
+</pageDefinition>

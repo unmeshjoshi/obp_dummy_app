@@ -3,26 +3,24 @@
 <!---->
 <ViewObject
   xmlns="http://xmlns.oracle.com/bc4j"
-  Name="PartyVO"
+  Name="PartyAddress"
   Version="11.1.1.64.93"
   InheritPersonalization="true"
   BindingStyle="OracleName"
   CustomQuery="true"
-  ComponentClass="com.obpdemo.model.PartyVOImpl"
   PageIterMode="Full"
   UseGlueCode="false">
   <DesignTime>
-    <Attr Name="_codeGenFlag2" Value="Coll|Prog|VarAccess"/>
     <Attr Name="_isExpertMode" Value="true"/>
   </DesignTime>
   <Properties>
     <SchemaBasedProperties>
       <LABEL
-        ResId="com.obpdemo.model.PartyVO_LABEL"/>
+        ResId="com.obpdemo.model.PartyAddress_LABEL"/>
     </SchemaBasedProperties>
   </Properties>
   <ViewAttribute
-    Name="name"
+    Name="streetName"
     IsSelected="false"
     IsQueriable="false"
     IsPersistent="false"
@@ -33,7 +31,7 @@
     AliasName="VIEW_ATTR"
     SQLType="VARCHAR"/>
   <ViewAttribute
-    Name="branchName"
+    Name="city"
     IsSelected="false"
     IsPersistent="false"
     PrecisionRule="true"
@@ -41,4 +39,35 @@
     ColumnType="VARCHAR2"
     AliasName="VIEW_ATTR"
     SQLType="VARCHAR"/>
+  <ViewAttribute
+    Name="state"
+    IsSelected="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="VIEW_ATTR"
+    SQLType="VARCHAR"/>
+  <ViewAttribute
+    Name="country"
+    IsSelected="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="VIEW_ATTR"
+    SQLType="VARCHAR"/>
+  <ViewAttribute
+    Name="zip"
+    IsSelected="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="VIEW_ATTR"
+    SQLType="VARCHAR"/>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="ModelBundle"/>
+  </ResourceBundle>
 </ViewObject>

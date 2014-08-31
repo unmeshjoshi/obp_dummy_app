@@ -32,8 +32,13 @@
     ColumnType="VARCHAR2"
     AliasName="VIEW_ATTR"
     SQLType="VARCHAR"/>
-  <ResourceBundle>
-    <PropertiesBundle
-      PropertiesFile="ModelBundle"/>
-  </ResourceBundle>
+  <ViewAttribute
+    Name="branchName"
+    IsSelected="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="VIEW_ATTR"
+    SQLType="VARCHAR"/>
 </ViewObject>

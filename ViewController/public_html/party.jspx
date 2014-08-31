@@ -1,0 +1,82 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1"
+          xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:h="http://java.sun.com/jsf/html"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+  <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+  <f:view>
+    <af:document id="d1">
+      <af:messages id="m1"/>
+      <af:form id="f1">
+        <af:panelFormLayout id="pfl1">
+          <af:inputText value="#{bindings.name.inputValue}"
+                        label="#{bindings.name.hints.label}"
+                        required="#{bindings.name.hints.mandatory}"
+                        columns="#{bindings.name.hints.displayWidth}"
+                        maximumLength="#{bindings.name.hints.precision}"
+                        shortDesc="#{bindings.name.hints.tooltip}" id="it2">
+            <f:validator binding="#{bindings.name.validator}"/>
+          </af:inputText>
+          <af:inputText value="#{bindings.branchName.inputValue}"
+                        label="#{bindings.branchName.hints.label}"
+                        required="#{bindings.branchName.hints.mandatory}"
+                        columns="#{bindings.branchName.hints.displayWidth}"
+                        maximumLength="#{bindings.branchName.hints.precision}"
+                        shortDesc="#{bindings.branchName.hints.tooltip}"
+                        id="it1">
+            <f:validator binding="#{bindings.branchName.validator}"/>
+          </af:inputText>
+        </af:panelFormLayout>
+        <af:panelFormLayout id="pfl2">
+          <af:inputText value="#{bindings.streetName.inputValue}"
+                        label="#{bindings.streetName.hints.label}"
+                        required="#{bindings.streetName.hints.mandatory}"
+                        columns="#{bindings.streetName.hints.displayWidth}"
+                        maximumLength="#{bindings.streetName.hints.precision}"
+                        shortDesc="#{bindings.streetName.hints.tooltip}"
+                        id="it3">
+            <f:validator binding="#{bindings.streetName.validator}"/>
+          </af:inputText>
+          <af:inputText value="#{bindings.city.inputValue}"
+                        label="#{bindings.city.hints.label}"
+                        required="#{bindings.city.hints.mandatory}"
+                        columns="#{bindings.city.hints.displayWidth}"
+                        maximumLength="#{bindings.city.hints.precision}"
+                        shortDesc="#{bindings.city.hints.tooltip}" id="it5">
+            <f:validator binding="#{bindings.city.validator}"/>
+          </af:inputText>
+          <af:inputText value="#{bindings.state.inputValue}"
+                        label="#{bindings.state.hints.label}"
+                        required="#{bindings.state.hints.mandatory}"
+                        columns="#{bindings.state.hints.displayWidth}"
+                        maximumLength="#{bindings.state.hints.precision}"
+                        shortDesc="#{bindings.state.hints.tooltip}" id="it4">
+            <f:validator binding="#{bindings.state.validator}"/>
+          </af:inputText>
+          <af:inputText value="#{bindings.country.inputValue}"
+                        label="#{bindings.country.hints.label}"
+                        required="#{bindings.country.hints.mandatory}"
+                        columns="#{bindings.country.hints.displayWidth}"
+                        maximumLength="#{bindings.country.hints.precision}"
+                        shortDesc="#{bindings.country.hints.tooltip}" id="it7">
+            <f:validator binding="#{bindings.country.validator}"/>
+          </af:inputText>
+          <af:inputText value="#{bindings.zip.inputValue}"
+                        label="#{bindings.zip.hints.label}"
+                        required="#{bindings.zip.hints.mandatory}"
+                        columns="#{bindings.zip.hints.displayWidth}"
+                        maximumLength="#{bindings.zip.hints.precision}"
+                        shortDesc="#{bindings.zip.hints.tooltip}" id="it6">
+            <f:validator binding="#{bindings.zip.validator}"/>
+          </af:inputText>
+        </af:panelFormLayout>
+        <af:commandButton text="Search" id="Search"
+                          action="#{backingBeanScope.PartyBackingBean.searchParty}"/>
+            
+        <af:commandButton text="Save" id="Save"
+                          action="#{backingBeanScope.PartyBackingBean.createOrUpdate}"/>
+      </af:form>
+    </af:document>
+  </f:view>
+  <!--oracle-jdev-comment:preferred-managed-bean-name:PartyBackingBean-->
+</jsp:root>

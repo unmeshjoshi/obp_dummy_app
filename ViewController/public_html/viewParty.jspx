@@ -1,0 +1,49 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1"
+          xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:h="http://java.sun.com/jsf/html"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+  <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+  <f:view>
+    <af:document id="d1">
+      <af:messages id="m1"/>
+      <af:form id="f1">
+        <af:panelFormLayout id="pfl1">
+          <af:panelLabelAndMessage label="#{bindings.name.hints.label}"
+                                   id="plam2">
+            <af:outputText value="#{bindings.name.inputValue}" id="ot1"/>
+          </af:panelLabelAndMessage>
+          <af:panelLabelAndMessage label="#{bindings.branchName.hints.label}"
+                                   id="plam1">
+            <af:outputText value="#{bindings.branchName.inputValue}" id="ot2"/>
+          </af:panelLabelAndMessage>
+        </af:panelFormLayout>
+        <af:panelFormLayout id="pfl2">
+          <af:panelLabelAndMessage label="#{bindings.streetName.hints.label}"
+                                   id="plam6">
+            <af:outputText value="#{bindings.streetName.inputValue}" id="ot3"/>
+          </af:panelLabelAndMessage>
+          <af:panelLabelAndMessage label="#{bindings.city.hints.label}"
+                                   id="plam7">
+            <af:outputText value="#{bindings.city.inputValue}" id="ot5"/>
+          </af:panelLabelAndMessage>
+          <af:panelLabelAndMessage label="#{bindings.state.hints.label}"
+                                   id="plam5">
+            <af:outputText value="#{bindings.state.inputValue}" id="ot6"/>
+          </af:panelLabelAndMessage>
+          <af:panelLabelAndMessage label="#{bindings.country.hints.label}"
+                                   id="plam4">
+            <af:outputText value="#{bindings.country.inputValue}" id="ot7"/>
+          </af:panelLabelAndMessage>
+          <af:panelLabelAndMessage label="#{bindings.zip.hints.label}"
+                                   id="plam3">
+            <af:outputText value="#{bindings.zip.inputValue}" id="ot4"/>
+          </af:panelLabelAndMessage>
+        </af:panelFormLayout>
+        <af:commandButton text="Edit" id="Edit"
+                          action="#{backingBeanScope.PartyBackingBean.edit}"/>
+      </af:form>
+    </af:document>
+  </f:view>
+  <!--oracle-jdev-comment:preferred-managed-bean-name:PartyBackingBean-->
+</jsp:root>

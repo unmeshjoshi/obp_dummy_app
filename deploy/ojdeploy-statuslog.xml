@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<ojdeploy-log>
+  <deploy-task>
+    <target>
+      <profile>ADFBCNoDatabaseWSApp_Project1_ADFBCNoDatabaseWSApp</profile>
+      <workspace>/home/unmesh/work/ADF/ADFBCNoDatabaseWSApp/ADFBCNoDatabaseWSApp.jws</workspace>
+      <project>ViewController.jpr</project>
+      <output-file>/home/unmesh/work/ADF/ADFBCNoDatabaseWSApp/deploy/ADFBCNoDatabaseWSApp_Project1_ADFBCNoDatabaseWSApp.ear</output-file>
+    </target>
+    <exception msg="== ERROR: No j2ee modules detected in EAR archive. Deployment aborted. ==">
+    <![CDATA[
+    oracle.jdeveloper.deploy.VetoableDeployException: == ERROR: No j2ee modules detected in EAR archive. Deployment aborted. ==
+	at oracle.jdevimpl.deploy.ear.EarDeployerListener.willDeploy(EarDeployerListener.java:113)
+	at oracle.jdevimpl.deploy.fwk.ListenerSupport.fireWillDeploy(ListenerSupport.java:198)
+	at oracle.jdeveloper.deploy.common.AbstractDeployer.deploy(AbstractDeployer.java:88)
+	at oracle.jdevimpl.deploy.fwk.WrappedDeployer.deployImpl(WrappedDeployer.java:39)
+	at oracle.jdeveloper.deploy.common.AbstractDeployer.deploy(AbstractDeployer.java:94)
+	at oracle.jdevimpl.deploy.fwk.DeploymentManagerImpl.deploy(DeploymentManagerImpl.java:457)
+	at oracle.jdeveloper.deploy.DeploymentManager.deploy(DeploymentManager.java:217)
+	at oracle.jdevimpl.deploy.common.ModulePackagerImpl.deployProfiles(ModulePackagerImpl.java:86)
+	at oracle.jdeveloper.deploy.common.ModulePackager.deployProfiles(ModulePackager.java:63)
+	at oracle.jdeveloper.deploy.common.ModulePackager.deployImpl(ModulePackager.java:52)
+	at oracle.jdeveloper.deploy.common.AbstractDeployer.deploy(AbstractDeployer.java:94)
+	at oracle.jdevimpl.deploy.fwk.WrappedDeployer.deployImpl(WrappedDeployer.java:39)
+	at oracle.jdeveloper.deploy.common.AbstractDeployer.deploy(AbstractDeployer.java:94)
+	at oracle.jdeveloper.deploy.common.BatchDeployer.deployImpl(BatchDeployer.java:82)
+	at oracle.jdeveloper.deploy.common.AbstractDeployer.deploy(AbstractDeployer.java:94)
+	at oracle.jdevimpl.deploy.fwk.WrappedDeployer.deployImpl(WrappedDeployer.java:39)
+	at oracle.jdeveloper.deploy.common.AbstractDeployer.deploy(AbstractDeployer.java:94)
+	at oracle.jdevimpl.deploy.fwk.WrappedDeployer.deployImpl(WrappedDeployer.java:39)
+	at oracle.jdeveloper.deploy.common.AbstractDeployer.deploy(AbstractDeployer.java:94)
+	at oracle.jdevimpl.deploy.fwk.DeploymentManagerImpl.deploy(DeploymentManagerImpl.java:457)
+	at oracle.jdevimpl.deploy.fwk.DeploymentManagerImpl$1.run(DeploymentManagerImpl.java:315)
+
+    ]]>
+    </exception>
+    <status exitcode="4">FAILED</status>
+  </deploy-task>
+  <summary>
+    <start-time>2014-08-31 18:58:30 IST</start-time>
+    <end-time>2014-08-31 18:58:32 IST</end-time>
+    <total-tasks>1</total-tasks>
+    <failures>1</failures>
+    <status exitcode="4">FAILED</status>
+  </summary>
+</ojdeploy-log>

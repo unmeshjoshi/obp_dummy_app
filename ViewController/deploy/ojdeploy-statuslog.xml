@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<ojdeploy-log>
+  <deploy-task>
+    <target>
+      <profile>ADFBCNoDatabaseWSApp_ViewController_webapp</profile>
+      <workspace>/home/unmesh/work/ADF/ADFBCNoDatabaseWSApp/ADFBCNoDatabaseWSApp.jws</workspace>
+      <project>ViewController.jpr</project>
+      <output-file>/home/unmesh/work/ADF/ADFBCNoDatabaseWSApp/ViewController/deploy/ADFBCNoDatabaseWSApp_ViewController_webapp.war</output-file>
+    </target>
+    <status exitcode="0">SUCCESS</status>
+  </deploy-task>
+  <summary>
+    <start-time>2014-08-31 18:57:10 IST</start-time>
+    <end-time>2014-08-31 18:57:13 IST</end-time>
+    <total-tasks>1</total-tasks>
+    <failures>0</failures>
+    <status exitcode="0">SUCCESS</status>
+  </summary>
+</ojdeploy-log>

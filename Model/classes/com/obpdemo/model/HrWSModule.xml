@@ -12,4 +12,7 @@
   <ViewUsage
     Name="PartyVO1"
     ViewObjectName="com.obpdemo.model.PartyVO"/>
+  <ViewUsage
+    Name="PartyAddress"
+    ViewObjectName="com.obpdemo.model.PartyAddress"/>
 </AppModule>

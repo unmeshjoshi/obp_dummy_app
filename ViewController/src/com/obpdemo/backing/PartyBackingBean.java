@@ -1,14 +1,20 @@
 package com.obpdemo.backing;
 
+import com.obpdemo.model.PartyVOImpl;
+
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import javax.faces.application.FacesMessage;
 import javax.faces.component.UIComponent;
+import javax.faces.component.html.HtmlCommandButton;
 import javax.faces.context.FacesContext;
 
 import javax.faces.validator.Validator;
 
+import oracle.adf.model.BindingContext;
+import oracle.adf.model.binding.DCBindingContainer;
+import oracle.adf.model.binding.DCIteratorBinding;
 import oracle.adf.view.rich.component.rich.RichDocument;
 import oracle.adf.view.rich.component.rich.RichForm;
 import oracle.adf.view.rich.component.rich.input.RichInputText;
@@ -16,25 +22,32 @@ import oracle.adf.view.rich.component.rich.layout.RichPanelFormLayout;
 import oracle.adf.view.rich.component.rich.nav.RichCommandButton;
 import oracle.adf.view.rich.component.rich.output.RichMessages;
 
+import oracle.binding.BindingContainer;
+import oracle.binding.OperationBinding;
+
+import oracle.jbo.Row;
+
+import oracle.jbo.ViewObject;
+
+import org.apache.myfaces.trinidad.component.UIXGroup;
+
 public class PartyBackingBean {
-    private RichCommandButton cb1;
     private RichInputText name;
     private RichPanelFormLayout pfl2;
     private RichPanelFormLayout pfl1;
     private RichForm f1;
     private RichMessages m1;
     private RichDocument d1;
+    private UIXGroup g1;
+    private RichPanelFormLayout pfl3;
+    private RichInputText it1;
+    private RichCommandButton cb2;
+    private HtmlCommandButton cb3;
+    private RichCommandButton cb1;
 
     public PartyBackingBean() {
     }
 
-    public void setCb1(RichCommandButton cb1) {
-        this.cb1 = cb1;
-    }
-
-    public RichCommandButton getCb1() {
-        return cb1;
-    }
 
     public void setName(RichInputText it1) {
         this.name = it1;
@@ -84,12 +97,6 @@ public class PartyBackingBean {
         return d1;
     }
 
-    public void submit() {
-        String name = (String)this.getName().getValue();
-
-
-    }
-
     //    Gets called only if some value is entered in name field. If the field is empty, this method is not called.
 
     public void validateName(FacesContext facesContext,
@@ -110,4 +117,84 @@ public class PartyBackingBean {
     }
 
 
+    public void setG1(UIXGroup g1) {
+        this.g1 = g1;
+    }
+
+    public UIXGroup getG1() {
+        return g1;
+    }
+
+    public void setPfl3(RichPanelFormLayout pfl3) {
+        this.pfl3 = pfl3;
+    }
+
+    public RichPanelFormLayout getPfl3() {
+        return pfl3;
+    }
+
+    public void setIt1(RichInputText it1) {
+        this.it1 = it1;
+    }
+
+    public RichInputText getIt1() {
+        return it1;
+    }
+
+    public void setCb2(RichCommandButton cb2) {
+        this.cb2 = cb2;
+    }
+
+    public RichCommandButton getCb2() {
+        return cb2;
+    }
+
+    public void setCb3(HtmlCommandButton cb3) {
+        this.cb3 = cb3;
+    }
+
+    public HtmlCommandButton getCb3() {
+        return cb3;
+    }
+
+    public void setCb1(RichCommandButton cb1) {
+        this.cb1 = cb1;
+    }
+
+    public RichCommandButton getCb1() {
+        return cb1;
+    }
+
+
+    private Util util = new Util();
+
+    public String searchParty() {
+        
+        PartyVOImpl party = util.getViewObject("PartyVO1Iterator");
+        
+        String name = (String)party.getCurrentRow().getAttribute("name");
+        String branchName = (String)party.getCurrentRow().getAttribute("branchName");
+        
+        
+        ViewObject address = util.getViewObject("PartyAddressIterator");
+        Row addressRow = address.createRow();
+        addressRow.setAttribute("streetName", "Blackberry Hill Road");    
+        addressRow.setAttribute("city", "Lexington");    
+        addressRow.setAttribute("state", "MA");    
+        addressRow.setAttribute("country", "USA");    
+        
+        address.insertRow(addressRow);
+
+        return "StayOnTheSamePage";
+    }
+
+
+    public String createOrUpdate() {
+        // Add event code here...
+        return "Save";
+    }
+
+    public String edit() {
+        return "Edit";
+    }
 }

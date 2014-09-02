@@ -1,7 +1,10 @@
 package com.obpdemo.backing;
 
+import com.obpdemo.backing.dto.Party;
 import com.obpdemo.model.PartyVOImpl;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -116,6 +119,18 @@ public class PartyBackingBean {
         return m.find();
     }
 
+    public String showMessage(UIComponent component, String messageText) {
+            FacesMessage fm = new FacesMessage(messageText);
+            /**
+             * set the type of the message.
+             * Valid types: error, fatal,info,warning
+             */
+            fm.setSeverity(FacesMessage.SEVERITY_ERROR);
+            FacesContext context = FacesContext.getCurrentInstance();
+            //departmentName is the binding property for our field.
+            context.addMessage(component.getClientId(context), fm);
+            return null;
+        }
 
     public void setG1(UIXGroup g1) {
         this.g1 = g1;
@@ -167,6 +182,7 @@ public class PartyBackingBean {
 
 
     private Util util = new Util();
+    private PartyService partyService = new PartyService();
 
     public String searchParty() {
         
@@ -174,8 +190,13 @@ public class PartyBackingBean {
         
         String name = (String)party.getCurrentRow().getAttribute("name");
         String branchName = (String)party.getCurrentRow().getAttribute("branchName");
-        
-        
+
+        List<Party> parties = partyService.search(name, branchName);
+        if (parties.isEmpty()) {
+            showMessage(getName(), "No client found with this name");  
+            return null;
+        }
+
         ViewObject address = util.getViewObject("PartyAddressIterator");
         Row addressRow = address.createRow();
         addressRow.setAttribute("streetName", "Blackberry Hill Road");    

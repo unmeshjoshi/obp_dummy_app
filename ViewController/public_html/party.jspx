@@ -14,7 +14,9 @@
                         required="#{bindings.name.hints.mandatory}"
                         columns="#{bindings.name.hints.displayWidth}"
                         maximumLength="#{bindings.name.hints.precision}"
-                        shortDesc="#{bindings.name.hints.tooltip}" id="it2">
+                        shortDesc="#{bindings.name.hints.tooltip}" id="it2"
+                        binding="#{backingBeanScope.PartyBackingBean.name}"
+                        validator="#{backingBeanScope.PartyBackingBean.validateName}">
             <f:validator binding="#{bindings.name.validator}"/>
           </af:inputText>
           <af:inputText value="#{bindings.branchName.inputValue}"
